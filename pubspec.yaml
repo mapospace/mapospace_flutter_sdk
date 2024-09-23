@@ -1,0 +1,18 @@
+name: mapospace_flutter_sdk
+description: **Mapospace Flutter SDK** is a lightweight geospatial analytics tool that captures event data, including location, from mobile apps for real-time insights. It provides easy integration and powerful location-based analytics to help understand user behavior and trends.
+version: 0.1.0+1
+
+
+environment:
+  sdk: ^3.5.0
+  flutter: ^3.24.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  very_good_analysis: ^6.0.0
