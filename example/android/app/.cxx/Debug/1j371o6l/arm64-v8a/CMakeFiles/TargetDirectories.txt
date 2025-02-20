@@ -1,0 +1,2 @@
+/Users/saubhagyadubey/development/repos/mapospace_flutter_sdk/example/android/app/.cxx/Debug/1j371o6l/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/saubhagyadubey/development/repos/mapospace_flutter_sdk/example/android/app/.cxx/Debug/1j371o6l/arm64-v8a/CMakeFiles/edit_cache.dir
