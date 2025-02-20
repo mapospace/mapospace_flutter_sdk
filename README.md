@@ -47,19 +47,52 @@ flutter pub get
 To initialize and start tracking events, import and set up the SDK:
 
 ```dart
-import 'package:mapospace_flutter_sdk/mapospace_flutter_sdk.dart';
+class _MyHomePageState extends State<MyHomePage> {
+  Mapospace mapospaceFlutterSdk = Mapospace();
+  @override
+  void initState() {
+    mapospaceFlutterSdk.initialize(apiKeyPath: 'assets/api_key.txt');
+    super.initState();
+  }
 
-void main() async {
-  await MapoSpaceSdk.initialize(apiKey: 'YOUR_API_KEY');
-
-  MapoSpaceSdk.trackEvent(
-    eventName: 'product_view',
-    parameters: {
-      'product_id': '12345',
-      'user_location': {'lat': 37.7749, 'lng': -122.4194},
-    },
-  );
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              mapospaceFlutterSdk.captureSaleEvent(
+                event: SaleEvent(
+                  orderId: "1",
+                  products: [
+                    Product(
+                      productId: 'Cashew_001',
+                      productName: 'Premium Cashew',
+                      categoryId: 'Dry_fruits_001',
+                      category: 'Dry fruits',
+                      subcategory: '',
+                      subcategoryId: '',
+                      itemValue: '200',
+                      itemCount: '5',
+                    )
+                  ],
+                  orderValue: "1000",
+                  paymentStatus: "successful",
+                  paymentType: 'UPI',
+                  timestamp: DateTime.now().toIso8601String(),
+                ),
+              );
+            },
+            child: Text('hello')),
+      ),
+    );
+  }
 }
+
 ```
 
 For more details, refer to the official documentation.
