@@ -6,7 +6,7 @@ import 'package:mapospace_flutter_sdk/mapospace_flutter_sdk.dart';
 void main() {
   group('MapospaceFlutterSdk', () {
     test('can be instantiated', () {
-      expect(MapospaceFlutterSdk(), isNotNull);
+      expect(Mapospace(), isNotNull);
     });
   });
 }
